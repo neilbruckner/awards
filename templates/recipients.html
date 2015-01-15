@@ -1,0 +1,27 @@
+<header>
+
+	<h1>Year {{year_level}} Awards</h1>
+
+</header>
+
+<body>
+	{% set s = student %}
+	{{s.fname}} {{s.lname}}<br>
+	{% for recipient in recipients %}
+		{% set a = recipient.award %}
+		{{a.name}}<br>
+	{% end %}
+	
+	{% if id > 1 %} 
+		<a href="/year/{{year_level}}/student/{{id-1}}">Previous</a>
+	{% end %}
+	
+	{% if id < len(recipients) %}
+		<a href="/year/{{year_level}}/student/{{id+1}}">Next</a>
+	{% end %}
+	
+	<a href="/">Home</a>
+	
+	<p>List Length = {{len(recipients)}}, id = {{id}}, year_level = {{year_level}}
+	
+</body>

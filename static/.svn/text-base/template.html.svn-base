@@ -1,0 +1,183 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Terra Quest</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWpu8WzsEO4AlJs_PflE_-v_ruwny9_uY">
+    </script>
+    <script type="text/javascript">
+	function initialize() {
+		var myLatlng = new google.maps.LatLng(-33.8878,151.1872);
+		var mapOptions = {
+			zoom: 12,
+			center: myLatlng
+		}
+		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		var contentString = "<h1>This is content!</h1>look at all this god damn content!!!!" <!-- Fucking Amaz-ballz! -->
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+			title: 'Sydney Uni'
+		});
+		var infowindow = new google.maps.InfoWindow({
+			content: contentString,
+			maxWidth: 200
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map, marker);
+		})
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);	
+    </script>
+</head>
+<body>
+    <header>
+    	<div style="width: 900px; margin: 0px auto;">
+            <h1>TERRA<i class="fa fa-globe"></i>QUEST</h1>
+            <nav>
+                <a href="#">Home<i class="fa fa-chevron-down"></i></a>
+                <a href="#">view events<i class="fa fa-chevron-down"></i></a>
+                <a href="#">Create events<i class="fa fa-chevron-down"></i></a>
+                <a href="#">Settings<i class="fa fa-chevron-down"></i></a>
+            </nav>
+        </div>
+    </header>
+    
+    <form id="login_form" action="/login" method="POST" style="background-color: rgba(100,100,100,0.2); position: absolute; right: 70px; top: 120px; z-index: 1; width: 400px;">
+        <fieldset>
+            <legend>
+                Account Login
+            </legend>
+            <p>
+                <label>Username: </label>
+                <input type="text" name="username" placeholder="Enter Username" id="login_username">
+            </p>
+            <p>
+                <label>Password: </label>
+                <input type="password" name="password" placeholder="Enter Password" id="login_password">
+            </p>
+            <p>
+                <input type="submit" value="Login">
+            </p>
+            <article id="invalid_login"></article>
+        </fieldset>
+    </form>
+    
+    <div id="map-canvas" style="height: 400px; min-width: 100%"></div>
+    <main>
+        <!--
+        <h2>Profile</h2>
+        <figure>
+            <img href="#">
+            <figcaption>
+                Caption
+            </figcaption>
+        </figure>
+        <p>
+            <em></em>
+            <strong></strong>
+            <del></del>
+            <ins></ins>
+            <q></q>
+            <sup></sup>
+            <span></span>
+            <a href=""></a>
+        </p>
+        <dl>
+            <dt>Name</dt>
+            <dd>John Smith</dd>
+        </dl>
+        <section>
+            <h2>Comments</h2>
+            <article>
+                <h3>Posted by Julie</h3>
+                <time datetime="2011-12-24">Yesterday</time>
+                <p>Merry Christmas!</p>
+            </article>
+        </section>
+        -->    
+        <form action="/login" method="POST">
+            <fieldset>
+                <legend>
+                    Account Login
+                </legend>
+                <p>
+                    <label>Username: </label>
+                    <input type="text" name="username" placeholder="Enter Username" id="login_username">
+                </p>
+                <p>
+                    <label>Password: </label>
+                    <input type="password" name="password" placeholder="Enter Password" id="login_password">
+                </p>
+                <p>
+                    <input type="submit" value="Login">
+                </p>
+                <article id="invalid_login"></article>
+                <!--                
+                <p>
+                    <label>Show Name: </label>
+                    <input type="checkbox">
+                </p>
+                <p>
+                    <label>when: </label>
+                    <input type="radio" name="when" value="now">
+                    <input type="radio" name="when" value="later">
+                </p>
+                <p>
+                    <label>Country: </label>
+                    <select>
+                        <option>Australia</option>
+                        <option value="UK">United Kingdom</option>
+                    </select>
+                </p>
+                <p>   
+                    <textarea></textarea>
+                </p>
+                <p>
+                    <input type="submit" placeholder="">
+                </p>
+                -->
+            </fieldset>
+        </form>
+        <!--
+        <ul>
+            <li>Programming</li>
+            <li>Design
+                <ul>
+                    <li>Web Design</li>
+                    <li>Graphic...</li>
+                </ul>
+            </li>
+            <li>Making Lists</li>
+        </ul>
+        -->
+        <h4>ABOUT</h4>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus, lectus vel sodales tincidunt, ex ligula semper risus, consectetur hendrerit felis nisl vitae lectus. Aenean eget vestibulum enim. Donec lobortis porttitor auctor. Nam sit amet faucibus felis. Aenean facilisis convallis leo ac pharetra. Ut ullamcorper, mi eu accumsan viverra, mauris ante maximus quam, vitae suscipit turpis arcu vitae lorem. Nam malesuada ullamcorper semper. Curabitur ultricies nec augue in feugiat. Sed gravida tincidunt lectus et pharetra. Duis dui leo, dapibus ullamcorper interdum eget, tempus in dolor. Ut at dignissim diam. Aliquam sagittis fringilla elit in facilisis. Nullam quis turpis sit amet sem feugiat dapibus. Vivamus volutpat consequat libero, non efficitur lorem dignissim eget.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus, lectus vel sodales tincidunt, ex ligula semper risus, consectetur hendrerit felis nisl vitae lectus. Aenean eget vestibulum enim. Donec lobortis porttitor auctor. Nam sit amet faucibus felis. Aenean facilisis convallis leo ac pharetra. Ut ullamcorper, mi eu accumsan viverra, mauris ante maximus quam, vitae suscipit turpis arcu vitae lorem. Nam malesuada ullamcorper semper. Curabitur ultricies nec augue in feugiat. Sed gravida tincidunt lectus et pharetra. Duis dui leo, dapibus ullamcorper interdum eget, tempus in dolor. Ut at dignissim diam. Aliquam sagittis fringilla elit in facilisis. Nullam quis turpis sit amet sem feugiat dapibus. Vivamus volutpat consequat libero, non efficitur lorem dignissim eget.
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus, lectus vel sodales tincidunt, ex ligula semper risus, consectetur hendrerit felis nisl vitae lectus. Aenean eget vestibulum enim. Donec lobortis porttitor auctor. Nam sit amet faucibus felis. Aenean facilisis convallis leo ac pharetra. Ut ullamcorper, mi eu accumsan viverra, mauris ante maximus quam, vitae suscipit turpis arcu vitae lorem. Nam malesuada ullamcorper semper. Curabitur ultricies nec augue in feugiat. Sed gravida tincidunt lectus et pharetra. Duis dui leo, dapibus ullamcorper interdum eget, tempus in dolor. Ut at dignissim diam. Aliquam sagittis fringilla elit in facilisis. Nullam quis turpis sit amet sem feugiat dapibus. Vivamus volutpat consequat libero, non efficitur lorem dignissim eget.
+        </p>
+	</main>
+    <footer>
+    	<div style="width: 900px; margin: 0px auto;">
+    		Terra Quest 2015.
+    		<a href="">Privacy policy</a> - <a href="">Terms of Use</a>
+        </div>
+    </footer>
+</body>
+</html>
