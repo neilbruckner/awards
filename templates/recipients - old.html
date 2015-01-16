@@ -5,28 +5,28 @@
 </header>
 
 <body>
-	
-
-	{% set s = students %}
-	{{s[id-1][3]}} {{s[id-1][2]}}<br>
-	
+	{% set s = student %}
+	{{s.fname}} {{s.lname}}<br>
 	{% for recipient in recipients %}
 		{% set a = recipient.award %}
-		{% if recipient.student.id == s[id-1][0] %}
-			{{a.name}}<br>
-		{% end %}
+		{{a.name}}<br>
+	{% end %}
+	
+	{% for stud in students %}
+		{% set t = students %}
+		{{t.fname}} {{t.lname}}<br>
 	{% end %}
 	
 	{% if id > 1 %} 
 		<a href="/year/{{year_level}}/student/{{id-1}}">Previous</a>
 	{% end %}
 	
-	{% if id < len(students) %}
+	{% if id < len(recipients) %}
 		<a href="/year/{{year_level}}/student/{{id+1}}">Next</a>
 	{% end %}
 	
 	<a href="/">Home</a>
 	
-	<p>List Length = {{len(students)}}, id = {{id}}, year_level = {{year_level}}
+	<p>List Length = {{len(recipients)}}, id = {{id}}, year_level = {{year_level}}
 	
 </body>

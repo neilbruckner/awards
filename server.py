@@ -14,8 +14,9 @@ def recipient_handler(request, year_level, id):
     recipients = methods.find_recipients_by_year(year_level)
 #    print(id, year_level, recipients)
     student = methods.get_student(id)
+    students = methods.find_recipients_by_year_name_only(year_level)
     loader.reset()
-    response = loader.load('recipients.html').generate(year_level=year_level, id=id, recipients = recipients, student = student)
+    response = loader.load('recipients.html').generate(year_level=year_level, id=id, recipients = recipients, student = student, students = students)
     request.write(response)
     
 def invalid_url_handler(request):

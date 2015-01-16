@@ -144,7 +144,7 @@ def find_recipients_by_year_name_only(year_level):
       ORDER BY s.lname, s.fname
       ''', [year_level])
     for row in cur:
-        stud = list(row)
+        stud = row
         if stud != last:
             students.append(stud)
             last = stud
